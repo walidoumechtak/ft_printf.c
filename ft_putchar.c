@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 15:29:10 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/02 22:06:55 by woumecht         ###   ########.fr       */
+/*   Created: 2022/11/02 20:51:03 by woumecht          #+#    #+#             */
+/*   Updated: 2022/11/02 20:52:38 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int ft_printf(const char *s, ...)
+void	ft_puthcar(char c)
 {
-	va_list	ptr;
-	int	i;
-
-	i = 0;
-	va_start(ptr, s);
-	while (s[i])
-	{
-		if (s[i] == '%')
-		{
-			i++;
-			ft_vprintf(va_arg(ptr,  int), i, (char *)s);
-		}
-		else
-		{
-			ft_putchar(s[i]);
-			i++;
-		}
-	}
-	va_end(ptr);
-	return (0);
+	write(1, &c, 1);
 }
