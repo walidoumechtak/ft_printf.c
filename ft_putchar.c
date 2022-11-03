@@ -6,13 +6,13 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:51:03 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/02 20:52:38 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:05:10 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_puthcar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

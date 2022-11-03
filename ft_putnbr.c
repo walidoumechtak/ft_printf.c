@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vprintf.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 20:10:27 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/03 22:18:47 by woumecht         ###   ########.fr       */
+/*   Created: 2022/11/03 18:34:34 by woumecht          #+#    #+#             */
+/*   Updated: 2022/11/03 22:10:51 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_vprintf(va_list ptr, int *i, char *s)
+void    ft_putnbr(int n)
 {
-	if (s[*i] == 'c')
-		ft_putchar(va_arg(ptr,int));
-	else if (s[*i] == 's')
-		ft_putstr(va_arg(ptr, char *));
-	else if (s[*i] == 'd' || s[*i] == 'i')
-		ft_putnbr(va_arg(ptr, int));
-	else if (s[*i] == '%')
-		ft_putchar('%');
-	else if (s[*i] == 'u')
-		ft_printUns(va_arg(ptr, unsigned int));
-	*i = *i + 1;
+    if (n == -2147483648)
+    {
+        ft_putchar('-');
+        ft_putchar('2');
+        n = 147483648;
+    }
+    else if (n < 0)
+    {
+        ft_putchar('-');
+        n *= -1;
+    }
+    if (n >= 10)
+        ft_putnbr(n / 10);
+    ft_putchar((n % 10) + 48);
 }

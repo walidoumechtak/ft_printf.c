@@ -6,7 +6,7 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:29:10 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/02 22:06:55 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/03 22:08:08 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_printf(const char *s, ...)
 		if (s[i] == '%')
 		{
 			i++;
-			ft_vprintf(va_arg(ptr,  int), i, (char *)s);
+			ft_vprintf(ptr, &i, (char *)s);
 		}
 		else
 		{
@@ -34,4 +34,10 @@ int ft_printf(const char *s, ...)
 	}
 	va_end(ptr);
 	return (0);
+}
+int main()
+{
+	char c = 'c';
+	printf("%c --- %s --- %d --- %d --- %% --- %u\n", c, NULL, 2001, -10, -20);
+	ft_printf("%c --- %s --- %d --- %d --- %% --- %u", c, NULL, 2001, -10, -20);
 }
