@@ -6,23 +6,35 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:10:27 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/03 22:18:47 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/04 17:14:26 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_vprintf(va_list ptr, int *i, char *s)
+int	ft_vprintf(va_list ptr, int i, char *s)
 {
-	if (s[*i] == 'c')
-		ft_putchar(va_arg(ptr,int));
-	else if (s[*i] == 's')
-		ft_putstr(va_arg(ptr, char *));
-	else if (s[*i] == 'd' || s[*i] == 'i')
-		ft_putnbr(va_arg(ptr, int));
-	else if (s[*i] == '%')
-		ft_putchar('%');
-	else if (s[*i] == 'u')
-		ft_printUns(va_arg(ptr, unsigned int));
-	*i = *i + 1;
+	int	cpp;
+
+	cpp = 0;
+	if (s[i] == 'c')
+		cpp = ft_putchar(va_arg(ptr, int));
+	else if (s[i] == 's')
+		cpp = ft_putstr(va_arg(ptr, char *));
+	else if (s[i] == 'd' || s[i] == 'i')
+		cpp = ft_putnbr(va_arg(ptr, int));
+	else if (s[i] == '%')
+		cpp = ft_putchar('%');
+	else if (s[i] == 'u')
+		cpp = ft_printUns(va_arg(ptr, unsigned int));
+	else if (s[i] == 'x')
+		cpp = ft_hexaLower(va_arg(ptr, unsigned int));
+	else if (s[i] == 'X')
+		cpp = ft_hexaUpper(va_arg(ptr, unsigned int));
+	else if (s[i] == 'p')
+	{
+		write(1, "0x", 2);
+		cpp = ft_hexaLower(va_arg(ptr, size_t)) + 2;
+	}
+	return (cpp);
 }

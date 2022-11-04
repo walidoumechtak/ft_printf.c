@@ -6,7 +6,7 @@
 #    By: woumecht <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 15:28:05 by woumecht          #+#    #+#              #
-#    Updated: 2022/11/03 22:18:07 by woumecht         ###   ########.fr        #
+#    Updated: 2022/11/04 11:06:25 by woumecht         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRC = ft_printf.c	\
 	ft_putchar.c	\
 	ft_putstr.c		\
 	ft_putnbr.c		\
-	ft_printUns.c
+	ft_printUns.c	\
+	ft_hexaLower.c	\
+	ft_hexaUpper.c
 
 all:$(NAME)
 

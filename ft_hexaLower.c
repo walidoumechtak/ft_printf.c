@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_hexaLower.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 18:18:40 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/04 15:24:51 by woumecht         ###   ########.fr       */
+/*   Created: 2022/11/03 23:35:22 by woumecht          #+#    #+#             */
+/*   Updated: 2022/11/04 15:05:57 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_hexaLower(size_t n)
 {
-	int i;
 	int cpp;
+	char *arr;
 
 	cpp = 0;
-	if (s == NULL)
+	arr = "0123456789abcdef";
+	if (n >= 16)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		cpp += ft_hexaLower(n / 16);
 	}
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-		cpp++;
-	}
+	ft_putchar(arr[n % 16]);
+	cpp++;
 	return (cpp);
 }
