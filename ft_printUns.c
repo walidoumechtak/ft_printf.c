@@ -6,15 +6,15 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:16:33 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/04 15:06:22 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/04 22:35:57 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printUns(unsigned int n)
+int	ft_printuns(unsigned int n)
 {
-	int cpp;
+	int		cpp;
 
 	cpp = 0;
 	if (n >= 10)

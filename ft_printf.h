@@ -6,7 +6,7 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 15:07:14 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/04 15:49:47 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/05 08:17:19 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_putchar(char c);
 int	ft_vprintf(va_list ptr, int i, char *s);
 int	ft_putstr(char *s);
 int	ft_putnbr(int n);
-int	ft_printUns(unsigned int n);
-int	ft_hexaLower(size_t n);
-int	ft_hexaUpper(unsigned int n);
+int	ft_printuns(unsigned int n);
+int	ft_hexalower(size_t n);
+int	ft_hexaupper(unsigned int n);
 
 #endif

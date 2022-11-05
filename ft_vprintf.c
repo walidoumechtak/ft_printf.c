@@ -6,7 +6,7 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 20:10:27 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/04 17:14:26 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/05 08:19:13 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ int	ft_vprintf(va_list ptr, int i, char *s)
 	else if (s[i] == '%')
 		cpp = ft_putchar('%');
 	else if (s[i] == 'u')
-		cpp = ft_printUns(va_arg(ptr, unsigned int));
+		cpp = ft_printuns(va_arg(ptr, unsigned int));
 	else if (s[i] == 'x')
-		cpp = ft_hexaLower(va_arg(ptr, unsigned int));
+		cpp = ft_hexalower(va_arg(ptr, unsigned int));
 	else if (s[i] == 'X')
-		cpp = ft_hexaUpper(va_arg(ptr, unsigned int));
+		cpp = ft_hexaupper(va_arg(ptr, unsigned int));
 	else if (s[i] == 'p')
 	{
 		write(1, "0x", 2);
-		cpp = ft_hexaLower(va_arg(ptr, size_t)) + 2;
+		cpp = ft_hexalower(va_arg(ptr, size_t)) + 2;
 	}
 	return (cpp);
 }

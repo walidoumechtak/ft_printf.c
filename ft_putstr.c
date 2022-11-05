@@ -6,7 +6,7 @@
 /*   By: woumecht <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:18:40 by woumecht          #+#    #+#             */
-/*   Updated: 2022/11/04 15:24:51 by woumecht         ###   ########.fr       */
+/*   Updated: 2022/11/05 08:16:01 by woumecht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_putstr(char *s)
 {
-	int i;
-	int cpp;
+	int		i;
+	int		cpp;
 
 	cpp = 0;
 	if (s == NULL)
