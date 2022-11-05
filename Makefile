@@ -6,7 +6,7 @@
 #    By: woumecht <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 15:28:05 by woumecht          #+#    #+#              #
-#    Updated: 2022/11/05 08:17:06 by woumecht         ###   ########.fr        #
+#    Updated: 2022/11/05 15:24:25 by woumecht         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,9 @@ OBJ = $(SRC:.c=.o)
 
 $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
+
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
