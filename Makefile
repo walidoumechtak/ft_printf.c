@@ -6,7 +6,7 @@
 #    By: woumecht <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 15:28:05 by woumecht          #+#    #+#              #
-#    Updated: 2022/11/05 15:24:25 by woumecht         ###   ########.fr        #
+#    Updated: 2022/11/05 15:27:16 by woumecht         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,5 +41,3 @@ fclean:
 
 re: fclean all
 
-git :
-	git add . && git commit -m "push printf" && git push
